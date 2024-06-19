@@ -23,6 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 /.idea
-package-lock.json
 jan_react_redux_toolkit_moviedb.iml
 
