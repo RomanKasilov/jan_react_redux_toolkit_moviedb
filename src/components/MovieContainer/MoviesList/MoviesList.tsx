@@ -1,15 +1,11 @@
-import {IMoviesListCard} from "../../../types/IMoviesListCard";
-import {FC} from "react";
 import {MoviesListCard} from "../MoviesListCard/MoviesListCard";
+import {useAppSelector} from "../../../pages/hooks/redux.hooks";
 
-interface IProps {
-movies:IMoviesListCard[]
-}
-
-const MoviesList:FC<IProps> = ({movies}) => {
+const MoviesList = () => {
+    const {movies} = useAppSelector(state => state.movies);
     return (
         <div>
-            {movies.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)}
+            {movies && movies.results.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)}
         </div>
     );
 };
