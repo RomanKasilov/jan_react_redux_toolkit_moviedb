@@ -1,4 +1,5 @@
-import {IMoviesListCard} from "../SCRAP/getAllMovieModel";
+import {IMoviesListCard} from "./IMoviesListCard";
+
 
 export interface IPaginatedMoviesList{
     page: number,

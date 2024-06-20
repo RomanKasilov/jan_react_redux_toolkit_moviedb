@@ -1,11 +1,10 @@
 import {IPaginatedMoviesList} from "../../types/IPaginatedMoviesList";
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {IMovieSearchParams, movieService} from "../../services/movieService";
-import axios, {AxiosError} from "axios";
+import {AxiosError} from "axios";
 
 interface IMovieSlice {
     movies: IPaginatedMoviesList | null,
-
 }
 
 let initialState: IMovieSlice = {
