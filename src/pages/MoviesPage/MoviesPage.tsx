@@ -14,7 +14,7 @@ const MoviesPage = () => {
     }, [searchParams]);
     return (
         <div>
-             <MoviesList/>
+            <MoviesList/>
             <Pagination/>
         </div>
     );
