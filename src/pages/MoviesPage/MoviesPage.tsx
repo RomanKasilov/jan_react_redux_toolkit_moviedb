@@ -1,5 +1,6 @@
 import {useEffect} from "react";
 import {useSearchParams} from "react-router-dom";
+
 import {useAppDispatch} from "../hooks/redux.hooks";
 import {movieActions} from "../../redux/slices/movieSlice";
 import {MoviesList} from "../../components/MovieContainer/MoviesList/MoviesList";
@@ -12,6 +13,7 @@ const MoviesPage = () => {
     useEffect(() => {
         dispatch(movieActions.getAll({page: searchParams.get('page') || '1'}))
     }, [searchParams]);
+
     return (
         <div>
             <MoviesList/>
