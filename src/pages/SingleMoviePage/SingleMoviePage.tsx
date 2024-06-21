@@ -4,7 +4,7 @@ import {useEffect} from "react";
 import {movieActions} from "../../redux/slices/movieSlice";
 import {useParams} from "react-router-dom";
 
-const MoviePage = () => {
+const SingleMoviePage = () => {
     const {movieId} = useParams();
     const dispatch = useAppDispatch();
     useEffect(() => {
@@ -17,4 +17,4 @@ const MoviePage = () => {
     );
 };
 
-export {MoviePage};
+export {SingleMoviePage};

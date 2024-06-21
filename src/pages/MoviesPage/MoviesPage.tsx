@@ -3,8 +3,8 @@ import {useSearchParams} from "react-router-dom";
 
 import {useAppDispatch} from "../hooks/redux.hooks";
 import {movieActions} from "../../redux/slices/movieSlice";
-import {MoviesList} from "../../components/MovieContainer/MoviesList/MoviesList";
 import {Pagination} from "../../components/Pagination/Pagination";
+import {MoviesList} from "../../components/MovieContainer/MoviesList/MoviesList";
 
 const MoviesPage = () => {
     const dispatch = useAppDispatch();

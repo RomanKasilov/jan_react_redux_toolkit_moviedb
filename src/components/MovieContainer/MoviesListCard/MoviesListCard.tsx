@@ -3,6 +3,7 @@ import {FC} from "react";
 import {useNavigate} from "react-router-dom";
 
 import css from './MoviesListCard.module.css'
+import {StarsRating} from "../../StarsRating/StarsRating";
 
 interface IProps {
     movie: IMoviesListCard
@@ -17,7 +18,9 @@ const MoviesListCard: FC<IProps> = ({movie}) => {
         <div className={css.movieCard} style={styles}
              onClick={() => navigate(`/movie/${movie.id}`)}>
 
-            {movie.title}
+            <h3>{movie.title}</h3>
+
+            <StarsRating rating={movie.vote_average}/>
         </div>
     );
 };
