@@ -1,11 +1,12 @@
 import {MoviesListCard} from "../MoviesListCard/MoviesListCard";
-import {useAppSelector} from "../../../pages/hooks/redux.hooks";
-
+import {useAppSelector} from "../../../hooks/redux.hooks";
+import css from './MoviesList.module.css'
 const MoviesList = () => {
     const {movies} = useAppSelector(state => state.movies);
     return (
-        <div>
+        <div className={css.moviesListWrapper}>
             {movies && movies.results.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)}
+
         </div>
     );
 };

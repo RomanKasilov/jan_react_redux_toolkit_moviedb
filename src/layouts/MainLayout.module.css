@@ -1,0 +1,9 @@
+.mainBar{
+    display: flex;
+    height: 80vh;
+}
+.outlet{
+    width: 85vw;
+    height: 80vh;
+    box-sizing: border-box;
+}

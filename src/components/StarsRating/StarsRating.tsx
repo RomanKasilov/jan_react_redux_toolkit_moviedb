@@ -10,7 +10,7 @@ interface IProps {
 const StarsRating: FC<IProps> = ({rating}) => {
 
     return (
-        <div className={css.wrap}>
+        <div className={css.starRatingBox}>
             <Rating value={(rating / 2)}
                     precision={0.25}
                     max={5}

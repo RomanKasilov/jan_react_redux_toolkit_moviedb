@@ -1,0 +1,22 @@
+.movieInfoBox {
+    display: flex;
+box-sizing: border-box;
+    padding: 10px;
+
+}
+
+.moviePoster {
+
+}
+
+.movieDetails {
+
+}
+
+.movieTitle {
+
+}
+
+.movieOverview {
+padding-right: 20%;
+}

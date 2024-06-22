@@ -1,0 +1,9 @@
+.navBarBox {
+    background: #15568a;
+    height: 80vh;
+    width: 15vw;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    margin-left: 7px;
+}

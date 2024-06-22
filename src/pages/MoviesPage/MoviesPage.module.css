@@ -1,0 +1,5 @@
+.moviePageBox {
+    box-sizing: border-box;
+    overflow: auto;
+    height: 80vh;
+}

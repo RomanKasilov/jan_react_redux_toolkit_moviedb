@@ -1,5 +1,17 @@
-.movieCard{
-    height: 200px;
-    width: 300px;
-    background-size: cover
+.movieCardBox {
+    height: 30vh;
+    width: 35vw;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-radius: 20px;
+
+}
+.movieCardBox h2{
+    color: #edcc92 !important;
+    padding: 5px 10px;
+    -webkit-text-stroke-color: #0d0d10;
+-webkit-text-stroke-width: 1px;
 }

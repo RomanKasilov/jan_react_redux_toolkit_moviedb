@@ -15,11 +15,10 @@ const MoviesListCard: FC<IProps> = ({movie}) => {
 
     const navigate = useNavigate();
     return (
-        <div className={css.movieCard} style={styles}
+        <div className={css.movieCardBox} style={styles}
              onClick={() => navigate(`/movie/${movie.id}`)}>
 
-            <h3>{movie.title}</h3>
-
+            <h2>{movie.title}</h2>
             <StarsRating rating={movie.vote_average}/>
         </div>
     );

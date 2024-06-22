@@ -1,0 +1,12 @@
+.starRatingBox {
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+}
+
+.ratingVote {
+    color: #f3f34c;
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-left: 10px;
+}

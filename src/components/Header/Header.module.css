@@ -1,0 +1,18 @@
+.header {
+    height: 20vh;
+    box-sizing: border-box;
+    border-bottom: 2px solid rgba(25, 152, 133, 0.94);
+    display: flex;
+    justify-content: space-around;
+}
+
+.darkSide {
+    background-color: rgba(3, 60, 101, 0.94)
+}
+
+.lightSide {
+    background-color: rgba(84, 124, 239, 0.94);
+}
+.headerWrapperBox{
+
+}
