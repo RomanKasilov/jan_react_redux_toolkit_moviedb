@@ -6,8 +6,9 @@ const genre = '/genre'
 const urls = {
     movies: {
         discoverAll: 'discover' + movie,
-        byId: (movieId: string) => movie+'/'+movieId,
-        searchByString: search + movie
+        byId: (movieId: string) => movie + '/' + movieId,
+        searchByString: search + movie,
+        getVideo: (movieId: number) => movie + '/' + movieId + '/videos'
 
     },
     genres: {

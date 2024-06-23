@@ -1,5 +1,5 @@
 import {MoviesList} from "../../components/MovieContainer/MoviesList/MoviesList";
-import {Pagination} from "../../components/Pagination/Pagination";
+import {PaginationComponent} from "../../components/Pagination/PaginationComponent";
 import {useAppDispatch, useAppSelector} from "../../hooks/redux.hooks";
 
 import css from './MoviesSearchPage.module.css'
@@ -21,7 +21,7 @@ const MoviesSearchPage = () => {
     return (moviesSearchResult &&
         <div className={css.movieSearchBox}>
             <MoviesList moviesData={moviesSearchResult}/>
-            <Pagination movies={moviesSearchResult}/>
+            <PaginationComponent movies={moviesSearchResult}/>
         </div>
     );
 };

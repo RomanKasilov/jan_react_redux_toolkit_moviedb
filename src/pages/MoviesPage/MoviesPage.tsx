@@ -3,7 +3,7 @@ import {useSearchParams} from "react-router-dom";
 
 import {useAppDispatch, useAppSelector} from "../../hooks/redux.hooks";
 import {movieActions} from "../../redux/slices/movieSlice";
-import {Pagination} from "../../components/Pagination/Pagination";
+import {PaginationComponent} from "../../components/Pagination/PaginationComponent";
 import {MoviesList} from "../../components/MovieContainer/MoviesList/MoviesList";
 
 import css from './MoviesPage.module.css'
@@ -20,7 +20,7 @@ const MoviesPage = () => {
     return ( movies &&
         <div className={css.moviePageBox}>
             <MoviesList moviesData={movies}/>
-            <Pagination movies={movies}/>
+            <PaginationComponent movies={movies}/>
         </div>
     )
 };

@@ -4,7 +4,7 @@ import {useEffect} from "react";
 import {movieActions} from "../../../redux/slices/movieSlice";
 import {useSearchParams} from "react-router-dom";
 import {MoviesList} from "../MoviesList/MoviesList";
-import {Pagination} from "../../Pagination/Pagination";
+import {PaginationComponent} from "../../Pagination/PaginationComponent";
 
 const MoviesByGenre = () => {
     const {moviesByGenre} = useAppSelector(state => state.movies);
@@ -18,7 +18,7 @@ const MoviesByGenre = () => {
     return (moviesByGenre &&
         <div className={css.movieByGenreBox}>
             <MoviesList moviesData={moviesByGenre}/>
-            <Pagination movies={moviesByGenre}/>
+            <PaginationComponent movies={moviesByGenre}/>
         </div>
     );
 };

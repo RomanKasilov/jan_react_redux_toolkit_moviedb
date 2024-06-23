@@ -1,20 +1,23 @@
 .genresBox {
-
     position: relative;
     top: 20px;
     right: 25px;
     z-index: 1;
     height: max(80%);
-
-
 }
 
 .badge {
     background-color: mediumpurple;
     color: wheat !important;
     box-sizing: content-box;
-
     margin: 1em 0;
     padding: 0.3em;
     border-radius: 10px;
+    transition: 0.5s;
+}
+
+.badge:hover {
+    cursor: pointer;
+    background-color: #a523f1;
+    transition: 0.5s;
 }

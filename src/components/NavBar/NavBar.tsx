@@ -12,9 +12,6 @@ const NavBar = () => {
     const handleClick = () => {
         setOpen(!open);
     };
-    const clickHandler=()=>{
-
-    }
     return (
         <div className={css.navBarBox}>
             <List>

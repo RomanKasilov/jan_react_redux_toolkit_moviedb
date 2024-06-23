@@ -1,0 +1,16 @@
+.errorPageBox{
+    box-sizing: border-box;
+    background-image: url("https://wallpapers.com/images/high/simpsons-background-20u4yr124f77js1m.webp");
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    padding-left: 30px;
+    padding-top: 30px;
+}
+.error{
+    width: 50%;
+    height: 100%;
+}
+.errorPageBox img{
+    height: 100%;
+}

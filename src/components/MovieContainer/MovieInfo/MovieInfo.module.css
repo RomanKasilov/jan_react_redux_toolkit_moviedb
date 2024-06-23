@@ -1,8 +1,11 @@
 .movieInfoBox {
     display: flex;
-box-sizing: border-box;
+    box-sizing: border-box;
     padding: 10px;
+    overflow: auto;
+    height: 80vh;
 
+margin: 0;
 }
 
 .moviePoster {
@@ -11,6 +14,7 @@ box-sizing: border-box;
 
 .movieDetails {
 
+
 }
 
 .movieTitle {
@@ -18,13 +22,12 @@ box-sizing: border-box;
 }
 
 .movieOverview {
-padding-right: 20%;
+    padding-right: 20%;
+    margin-bottom: 20px;
 }
-.badge{
-    position: relative;
-    top: 20px;
-    right: 25px;
-    z-index: 1;
-    height: max(80%);
-    margin-bottom: 10px;
+.video{
+height: 20vh;
+
 }
+
+

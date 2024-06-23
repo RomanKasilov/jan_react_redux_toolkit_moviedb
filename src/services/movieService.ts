@@ -2,6 +2,7 @@ import {apiService} from "./api.service";
 import {urls} from "../constans/urls";
 import {IPaginatedMoviesList} from "../types/IPaginatedMoviesList";
 import {IMovieDetails} from "../types/IMovieDetails";
+import {IVideoResponse} from "../types/IVideoResponse";
 
 
 const movieService =
@@ -22,6 +23,10 @@ const movieService =
         },
         getByGenre: async (with_genres: string, page: string): Promise<IPaginatedMoviesList> => {
             const response = await apiService.get(urls.movies.discoverAll, {params: {page, with_genres}})
+            return response.data
+        },
+        getVideo: async (movieId: number): Promise<IVideoResponse> => {
+            const response = await apiService.get(urls.movies.getVideo(movieId))
             return response.data
         }
     }
