@@ -2,6 +2,7 @@ import {IGenre} from "../../types/IGenre";
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {genreService} from "../../services/genreService";
 import {AxiosError} from "axios";
+import {IGenres} from "../../types/IGenres";
 
 type GenreSliceType = {
     genres: IGenre[]
@@ -15,7 +16,7 @@ const getAll = createAsyncThunk<IGenre[], void>(
     async (_, thunkAPI) => {
         try {
             const data = await genreService.getAll()
-            return thunkAPI.fulfillWithValue(data)
+            return thunkAPI.fulfillWithValue(data.genres)
         } catch (e) {
             const error = e as AxiosError
             return thunkAPI.rejectWithValue(error.response?.data)

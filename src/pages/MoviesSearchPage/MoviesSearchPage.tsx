@@ -4,10 +4,9 @@ import {useAppDispatch, useAppSelector} from "../../hooks/redux.hooks";
 
 import css from './MoviesSearchPage.module.css'
 import {useAppLocation} from "../../hooks/useAppLocation";
-import {useEffect, useMemo, useRef, useState} from "react";
+import {useEffect} from "react";
 import {movieActions} from "../../redux/slices/movieSlice";
 import {useSearchParams} from "react-router-dom";
-import * as querystring from "node:querystring";
 
 const MoviesSearchPage = () => {
     const dispatch = useAppDispatch();
