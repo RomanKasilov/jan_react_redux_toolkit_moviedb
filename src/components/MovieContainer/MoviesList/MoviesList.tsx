@@ -1,12 +1,16 @@
 import {MoviesListCard} from "../MoviesListCard/MoviesListCard";
-import {useAppSelector} from "../../../hooks/redux.hooks";
 import css from './MoviesList.module.css'
-const MoviesList = () => {
-    const {movies} = useAppSelector(state => state.movies);
+import {FC, PropsWithChildren} from "react";
+import {IPaginatedMoviesList} from "../../../types/IPaginatedMoviesList";
+
+interface IProps extends PropsWithChildren {
+moviesData:IPaginatedMoviesList
+}
+const MoviesList:FC<IProps> = ({moviesData}) => {
     return (
         <div className={css.moviesListWrapper}>
-            {movies && movies.results.map(movie => <MoviesListCard key={movie.id} movie={movie}/>)}
-
+            {moviesData && moviesData.results.map(movie =>
+                <MoviesListCard key={movie.id} movie={movie}/>)}
         </div>
     );
 };

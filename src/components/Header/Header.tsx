@@ -5,9 +5,6 @@ import classNames from "classnames";
 import {TextField} from "@mui/material";
 import {SubmitHandler, useForm} from "react-hook-form";
 import {useAppDispatch} from "../../hooks/redux.hooks";
-import {movieActions} from "../../redux/slices/movieSlice";
-import * as querystring from "node:querystring";
-import {router} from "../../router/router";
 import {useNavigate} from "react-router-dom";
 
 interface ISearch {
@@ -24,9 +21,8 @@ const Header: FC<IProps> = ({trigger, state}) => {
     const navigate = useNavigate();
     const {register, handleSubmit} = useForm<ISearch>();
     const handler: SubmitHandler<ISearch> = ({query}) => {
-        dispatch(movieActions.getByString(query))
-        navigate('/movies/search')
-
+        localStorage.setItem('searchString', query )
+        navigate('/movies/search',{state:query})
     }
     const classes = classNames(
         css.header,

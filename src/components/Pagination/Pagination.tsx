@@ -1,13 +1,16 @@
 import {useSearchParams} from "react-router-dom";
-import {useAppSelector} from "../../hooks/redux.hooks";
 import css from './Pagination.module.css'
+import {FC} from "react";
+import {IPaginatedMoviesList} from "../../types/IPaginatedMoviesList";
 
-const Pagination = () => {
-    const {movies} = useAppSelector(state => state.movies);
+interface IProps {
+    movies: IPaginatedMoviesList
+}
+
+const Pagination: FC<IProps> = ({movies}) => {
+    const {page, total_pages} = movies;
     const [, SetParams] = useSearchParams();
-
-
-    const currentPage = movies?.page ? movies.page : 1;
+    const currentPage = page ? page : 1;
     const maxPage = 500; //Api send only first 500 pages of results
 
     const paginator = (action: string) => {
@@ -23,7 +26,7 @@ const Pagination = () => {
     return (
         <div className={css.buttonsWrapper}>
             <button disabled={currentPage <= 1} onClick={() => paginator('prev')}>prev</button>
-            <button disabled={currentPage === maxPage} onClick={() => paginator('next')}>next</button>
+            <button disabled={currentPage === total_pages || currentPage === maxPage} onClick={() => paginator('next')}>next</button>
         </div>
     );
 }

@@ -18,9 +18,9 @@ const movieService =
             const response = await apiService.get(urls.movies.byId(movieId))
             return response.data
         },
-        searchByString: async (query: string): Promise<IPaginatedMoviesList> => {
+        searchByString: async (query: string, page:string): Promise<IPaginatedMoviesList> => {
             const response = await apiService.get(urls.movies.searchByString,
-                {params: {query, include_adult: false}})
+                {params: { query ,page , include_adult: false, api_key:'87cbb4ef865cf4a8f04c7d48485b3cae'}})
             return response.data
         }
     }

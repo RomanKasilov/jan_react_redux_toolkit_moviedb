@@ -39,11 +39,11 @@ const getById = createAsyncThunk<IMovieDetails, string>(
         }
     }
 )
-const getByString = createAsyncThunk<IPaginatedMoviesList, string>(
+const getByString = createAsyncThunk<IPaginatedMoviesList, { query:string, page:string}>(
     'movieSlice/getByString',
-    async (query, thunkAPI)=>{
+    async ({query,page}, thunkAPI)=>{
         try {
-            const data  = await movieService.searchByString(query)
+            const data  = await movieService.searchByString(query,page)
             return thunkAPI.fulfillWithValue(data)
         }catch (e){
             const error = e as AxiosError
