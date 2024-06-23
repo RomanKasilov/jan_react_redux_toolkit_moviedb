@@ -8,4 +8,7 @@
     margin-left: 7px;
     overflow: auto;
 }
+.navBarBox span{
+    font-size: 0.8em;
+}
 

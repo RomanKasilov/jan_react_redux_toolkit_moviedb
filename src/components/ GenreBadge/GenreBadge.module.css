@@ -1,14 +1,15 @@
-.genresBox{
+.genresBox {
 
-position: relative;
-    top:20px;
-right:25px;
+    position: relative;
+    top: 20px;
+    right: 25px;
     z-index: 1;
-  height: max(80%);
+    height: max(80%);
 
 
 }
-.badge{
+
+.badge {
     background-color: mediumpurple;
     color: wheat !important;
     box-sizing: content-box;

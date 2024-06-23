@@ -13,7 +13,7 @@ const MoviesPage = () => {
     const [searchParams] = useSearchParams();
     const {movies} = useAppSelector(state => state.movies);
     useEffect(() => {
-            dispatch(movieActions.getAll({page: searchParams.get('page') || '1'}))
+            dispatch(movieActions.getAll(searchParams.get('page') || '1'))
         }, [searchParams]
     );
 

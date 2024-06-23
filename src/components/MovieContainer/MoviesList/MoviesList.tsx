@@ -4,13 +4,19 @@ import {FC, PropsWithChildren} from "react";
 import {IPaginatedMoviesList} from "../../../types/IPaginatedMoviesList";
 
 interface IProps extends PropsWithChildren {
-moviesData:IPaginatedMoviesList
+    moviesData: IPaginatedMoviesList
 }
-const MoviesList:FC<IProps> = ({moviesData}) => {
+
+const MoviesList: FC<IProps> = ({moviesData: {results}}) => {
+
     return (
         <div className={css.moviesListWrapper}>
-            {moviesData && moviesData.results.map(movie =>
-                <MoviesListCard key={movie.id} movie={movie}/>)}
+            {results && results.map(movie => {
+                if (movie.backdrop_path && movie.poster_path) {
+                    return <MoviesListCard key={movie.id} movie={movie}/>
+                }
+            })
+            }
         </div>
     );
 };

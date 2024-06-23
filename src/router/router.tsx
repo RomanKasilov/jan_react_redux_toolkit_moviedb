@@ -4,6 +4,7 @@ import {MoviesPage} from "../pages/MoviesPage/MoviesPage";
 import {SingleMoviePage} from "../pages/SingleMoviePage/SingleMoviePage";
 import {ErrorPage} from "../pages/ErrorPage/ErrorPage";
 import {MoviesSearchPage} from "../pages/MoviesSearchPage/MoviesSearchPage";
+import {MoviesByGenrePage} from "../pages/MoviesByGenrePage/MoviesByGenrePage";
 
 const routes: RouteObject[] = [
     {
@@ -11,6 +12,7 @@ const routes: RouteObject[] = [
             {path: 'movies', element: <MoviesPage/>},
             {path: 'movie/:movieId', element: <SingleMoviePage/>},
             {path:'movies/search', element:<MoviesSearchPage/>},
+            {path: 'movies/:genre', element:<MoviesByGenrePage/>},
             {index: true, element: <Navigate to={'movies'}/>}
         ], errorElement: <ErrorPage/>
     },

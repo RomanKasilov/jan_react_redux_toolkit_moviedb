@@ -20,3 +20,11 @@ box-sizing: border-box;
 .movieOverview {
 padding-right: 20%;
 }
+.badge{
+    position: relative;
+    top: 20px;
+    right: 25px;
+    z-index: 1;
+    height: max(80%);
+    margin-bottom: 10px;
+}
