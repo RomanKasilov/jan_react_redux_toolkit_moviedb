@@ -3,6 +3,7 @@ import {useAppDispatch, useAppSelector} from "../../hooks/redux.hooks";
 import {useEffect} from "react";
 import {movieActions} from "../../redux/slices/movieSlice";
 import {useNavigate, useParams} from "react-router-dom";
+import {Box} from "@mui/material";
 
 const SingleMoviePage = () => {
     const {movieId} = useParams();
@@ -16,9 +17,9 @@ const SingleMoviePage = () => {
         navigate('/errorPage',{state:error})
     }
     return (
-        <div>
+        <Box>
             <MovieInfo/>
-        </div>
+        </Box>
     );
 };
 

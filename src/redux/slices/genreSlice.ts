@@ -2,7 +2,6 @@ import {IGenre} from "../../types/IGenre";
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {genreService} from "../../services/genreService";
 import {AxiosError, AxiosResponse} from "axios";
-import {IGenres} from "../../types/IGenres";
 import {ErrorType} from "../../types/ErrorType";
 
 type GenreSliceType = {

@@ -7,8 +7,6 @@ import {PaginationComponent} from "../../components/Pagination/PaginationCompone
 import {MoviesList} from "../../components/MovieContainer/MoviesList/MoviesList";
 
 import css from './MoviesPage.module.css'
-import {router} from "../../router/router";
-import {ErrorPage} from "../ErrorPage/ErrorPage";
 
 const MoviesPage = () => {
     const [searchParams] = useSearchParams();
@@ -24,13 +22,11 @@ const MoviesPage = () => {
     if (error) {
         navigate('/errorPage',{state:error})
     }
-    return (movies?
+    return (movies &&
         <div className={css.moviePageBox}>
             <MoviesList moviesData={movies}/>
             <PaginationComponent movies={movies}/>
         </div>
-            :
-      <ErrorPage/>
     )
 
 

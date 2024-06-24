@@ -4,6 +4,7 @@ import {useNavigate} from "react-router-dom";
 
 import css from './MoviesListCard.module.css'
 import {StarsRating} from "../../StarsRating/StarsRating";
+import {Paper} from "@mui/material";
 
 interface IProps {
     movie: IMoviesListCard

@@ -7,7 +7,13 @@
     justify-content: space-between;
     padding-bottom: 10px;
     border-radius: 20px;
-
+    /*box-shadow: 3px 3px 3px 3px rgba(84,74,74,0.62);*/
+    box-shadow: 0 1px 5px 3px rgba(84,74,74,0.81);
+    transition: all .025s;
+}
+.movieCardBox:hover {
+    filter: brightness(1.3);
+    cursor: pointer;
 }
 .movieCardBox h2{
     color: #edcc92 !important;
