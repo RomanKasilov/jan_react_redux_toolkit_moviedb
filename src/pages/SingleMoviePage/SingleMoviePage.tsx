@@ -1,6 +1,5 @@
 import {useEffect} from "react";
 import {useNavigate, useParams} from "react-router-dom";
-import {Box} from "@mui/material";
 
 import {movieActions} from "../../redux/slices";
 import {MovieInfo} from "../../components";
@@ -18,9 +17,9 @@ const SingleMoviePage = () => {
         navigate('/errorPage', {state: error})
     }
     return (
-        <Box>
+        <div>
             <MovieInfo/>
-        </Box>
+        </div>
     );
 };
 

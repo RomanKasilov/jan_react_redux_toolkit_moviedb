@@ -1,16 +1,15 @@
-import {IPaginatedMoviesList} from "../../types/IPaginatedMoviesList";
-import {createAsyncThunk, createSlice, isRejected} from "@reduxjs/toolkit";
-import {movieService} from "../../services/movieService";
 import {AxiosError, AxiosResponse} from "axios";
-import {IMovieDetails} from "../../types/IMovieDetails";
-import {ErrorType} from "../../types/ErrorType";
+import {createAsyncThunk, createSlice, isRejected} from "@reduxjs/toolkit";
+
+import {movieService} from "../../services";
+import {ErrorType, IPaginatedMoviesList, IMovieDetails} from "../../types";
 
 interface IMovieSlice {
     movies: IPaginatedMoviesList | null,
     movieInfo: IMovieDetails | null,
     moviesSearchResult: IPaginatedMoviesList | null,
     moviesByGenre: IPaginatedMoviesList | null,
-    moviesError: AxiosResponse<ErrorType>  | unknown
+    moviesError: AxiosResponse<ErrorType> | unknown
 }
 
 let initialState: IMovieSlice = {
