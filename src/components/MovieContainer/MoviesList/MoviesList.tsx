@@ -1,7 +1,8 @@
-import {MoviesListCard} from "../MoviesListCard/MoviesListCard";
-import css from './MoviesList.module.css'
 import {FC, PropsWithChildren} from "react";
-import {IPaginatedMoviesList} from "../../../types/IPaginatedMoviesList";
+
+import {MoviesListCard} from "../MoviesListCard";
+import {IPaginatedMoviesList} from "../../../types";
+import css from './MoviesList.module.css'
 
 interface IProps extends PropsWithChildren {
     moviesData: IPaginatedMoviesList
@@ -15,8 +16,7 @@ const MoviesList: FC<IProps> = ({moviesData: {results}}) => {
                 if (movie.backdrop_path && movie.poster_path) {
                     return <MoviesListCard key={movie.id} movie={movie}/>
                 }
-            })
-            }
+            })}
         </div>
     );
 };

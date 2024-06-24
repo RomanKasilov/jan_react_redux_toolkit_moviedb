@@ -1,10 +1,11 @@
-import {useSearchParams} from "react-router-dom";
-import css from './Pagination.module.css'
 import {FC} from "react";
-import {IPaginatedMoviesList} from "../../types/IPaginatedMoviesList";
+import {useSearchParams} from "react-router-dom";
 import {Button, Stack} from "@mui/material";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+
+import {IPaginatedMoviesList} from "../../types";
+import css from './Pagination.module.css'
 
 interface IProps {
     movies: IPaginatedMoviesList
@@ -38,7 +39,6 @@ const PaginationComponent: FC<IProps> = ({movies}) => {
                 next Page
             </Button>
         </Stack>
-
     );
 }
 

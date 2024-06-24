@@ -4,29 +4,16 @@
     padding: 10px;
     overflow: auto;
     height: 80vh;
-
-margin: 0;
-}
-
-.moviePoster {
-
-}
-
-.movieDetails {
-
-
-}
-
-.movieTitle {
-
+    margin: 0;
 }
 
 .movieOverview {
     padding-right: 20%;
     margin-bottom: 20px;
 }
-.video{
-height: 20vh;
+
+.video {
+    height: 20vh;
 
 }
 

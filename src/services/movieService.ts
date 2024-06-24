@@ -1,8 +1,6 @@
 import {apiService} from "./api.service";
-import {urls} from "../constans/urls";
-import {IPaginatedMoviesList} from "../types/IPaginatedMoviesList";
-import {IMovieDetails} from "../types/IMovieDetails";
-import {IVideoResponse} from "../types/IVideoResponse";
+import {urls} from "../constans";
+import {IMovieDetails, IPaginatedMoviesList, IVideoResponse} from "../types";
 
 
 const movieService =

@@ -1,4 +1,4 @@
-import {MoviesByGenre} from "../../components/MovieContainer/MoviesByGenre/MoviesByGenre";
+import {MoviesByGenre} from "../../components";
 
 const MoviesByGenrePage = () => {
     return (

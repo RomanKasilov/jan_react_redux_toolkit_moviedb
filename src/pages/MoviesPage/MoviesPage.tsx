@@ -1,11 +1,9 @@
 import {useEffect} from "react";
 import {useNavigate, useSearchParams} from "react-router-dom";
 
-import {useAppDispatch, useAppSelector} from "../../hooks/redux.hooks";
-import {movieActions} from "../../redux/slices/movieSlice";
-import {PaginationComponent} from "../../components/Pagination/PaginationComponent";
-import {MoviesList} from "../../components/MovieContainer/MoviesList/MoviesList";
-
+import {useAppDispatch, useAppSelector} from "../../hooks";
+import {movieActions} from "../../redux/slices";
+import {MoviesList, PaginationComponent} from "../../components";
 import css from './MoviesPage.module.css'
 
 const MoviesPage = () => {
@@ -20,7 +18,7 @@ const MoviesPage = () => {
     const navigate = useNavigate();
     const error = useAppSelector(state => state.movies.moviesError);
     if (error) {
-        navigate('/errorPage',{state:error})
+        navigate('/errorPage', {state: error})
     }
     return (movies &&
         <div className={css.moviePageBox}>
@@ -28,9 +26,6 @@ const MoviesPage = () => {
             <PaginationComponent movies={movies}/>
         </div>
     )
-
-
-
 }
 
 export {MoviesPage};

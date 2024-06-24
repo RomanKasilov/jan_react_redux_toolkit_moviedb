@@ -1,10 +1,11 @@
-import css from './MoviesByGenre.module.css'
-import {useAppDispatch, useAppSelector} from "../../../hooks/redux.hooks";
 import {useEffect} from "react";
-import {movieActions} from "../../../redux/slices/movieSlice";
 import {useNavigate, useSearchParams} from "react-router-dom";
-import {MoviesList} from "../MoviesList/MoviesList";
-import {PaginationComponent} from "../../Pagination/PaginationComponent";
+
+import {useAppDispatch, useAppSelector} from "../../../hooks";
+import {movieActions} from "../../../redux/slices";
+import {MoviesList} from "../MoviesList";
+import {PaginationComponent} from "../../Pagination";
+import css from './MoviesByGenre.module.css'
 
 const MoviesByGenre = () => {
     const {moviesByGenre} = useAppSelector(state => state.movies);
@@ -17,7 +18,7 @@ const MoviesByGenre = () => {
     const navigate = useNavigate();
     const error = useAppSelector(state => state.genres.genresError);
     if (error) {
-        navigate('/errorPage',{state:error})
+        navigate('/errorPage', {state: error})
     }
 
     return (moviesByGenre &&
