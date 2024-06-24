@@ -1,21 +1,24 @@
 import {IPaginatedMoviesList} from "../../types/IPaginatedMoviesList";
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice, isRejected} from "@reduxjs/toolkit";
 import {movieService} from "../../services/movieService";
-import {AxiosError} from "axios";
+import {AxiosError, AxiosResponse} from "axios";
 import {IMovieDetails} from "../../types/IMovieDetails";
+import {ErrorType} from "../../types/ErrorType";
 
 interface IMovieSlice {
     movies: IPaginatedMoviesList | null,
     movieInfo: IMovieDetails | null,
     moviesSearchResult: IPaginatedMoviesList | null,
-    moviesByGenre:IPaginatedMoviesList | null
+    moviesByGenre: IPaginatedMoviesList | null,
+    moviesError: AxiosResponse<ErrorType>  | unknown
 }
 
 let initialState: IMovieSlice = {
     movies: null,
     movieInfo: null,
     moviesSearchResult: null,
-    moviesByGenre: null
+    moviesByGenre: null,
+    moviesError: null
 }
 const getAll = createAsyncThunk<IPaginatedMoviesList, string>(
     'movieSlice/getAll',
@@ -61,7 +64,7 @@ const getByGenre = createAsyncThunk<IPaginatedMoviesList, { with_genres: string,
             return thunkAPI.fulfillWithValue(data)
         } catch (e) {
             const error = e as AxiosError
-            return thunkAPI.rejectWithValue(error.response?.data)
+            return thunkAPI.rejectWithValue(error.response)
         }
     }
 )
@@ -87,8 +90,12 @@ const movieSlice = createSlice({
                 (state, action) => {
                     state.moviesByGenre = action.payload
                 })
+            .addMatcher(isRejected(getAll, getById, getByString, getByGenre),
+                (state, action) => {
+                    state.moviesError = action.payload;
+                })
     }
-})//todo .addMatcher rejected resp
+})
 const {reducer: movieReducer, actions} = movieSlice;
 const movieActions = {
     ...actions,

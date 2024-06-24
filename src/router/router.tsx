@@ -13,6 +13,7 @@ const routes: RouteObject[] = [
             {path: 'movie/:movieId', element: <SingleMoviePage/>},
             {path:'movies/search', element:<MoviesSearchPage/>},
             {path: 'movies/:genre', element:<MoviesByGenrePage/>},
+            {path: 'errorPage', element:<ErrorPage/>},
             {index: true, element: <Navigate to={'movies'}/>}
         ], errorElement: <ErrorPage/>
     },

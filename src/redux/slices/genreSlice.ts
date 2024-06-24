@@ -1,14 +1,17 @@
 import {IGenre} from "../../types/IGenre";
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {genreService} from "../../services/genreService";
-import {AxiosError} from "axios";
+import {AxiosError, AxiosResponse} from "axios";
 import {IGenres} from "../../types/IGenres";
+import {ErrorType} from "../../types/ErrorType";
 
 type GenreSliceType = {
-    genres: IGenre[]
+    genres: IGenre[],
+  genresError: AxiosResponse<ErrorType>  | unknown
 }
 const initialState: GenreSliceType = {
-    genres: []
+    genres: [],
+    genresError:null
 }
 
 const getAll = createAsyncThunk<IGenre[], void>(
@@ -34,6 +37,10 @@ const genreSlice = createSlice({
                     state.genres = action.payload
                 }
             )
+            .addCase(getAll.rejected,
+                (state, action)=>{
+                state.genresError = action.payload
+                })
     }
 })
 

@@ -23,7 +23,7 @@ const MainLayout = () => {
     })
     return (
         <ThemeProvider theme={appTheme}>
-            <Paper square>
+            <Paper sx={{height:'100vh'}} square>
                 <Header trigger={trigger} state={state}/>
                 <div className={css.mainBar} >
                     <NavBar/>

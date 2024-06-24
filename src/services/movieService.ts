@@ -18,11 +18,12 @@ const movieService =
         },
         searchByString: async (query: string, page: string): Promise<IPaginatedMoviesList> => {
             const response = await apiService.get(urls.movies.searchByString,
-                {params: {query, page, include_adult: false}})
+                {params: {query, page, include_adult: false, language: 'en-US'}})
             return response.data
         },
         getByGenre: async (with_genres: string, page: string): Promise<IPaginatedMoviesList> => {
-            const response = await apiService.get(urls.movies.discoverAll, {params: {page, with_genres}})
+            const response = await apiService.get(urls.movies.discoverAll,
+                {params: {page, with_genres, include_adult: false, language: 'en-US'}})
             return response.data
         },
         getVideo: async (movieId: number): Promise<IVideoResponse> => {

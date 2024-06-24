@@ -2,7 +2,7 @@ import css from './MoviesByGenre.module.css'
 import {useAppDispatch, useAppSelector} from "../../../hooks/redux.hooks";
 import {useEffect} from "react";
 import {movieActions} from "../../../redux/slices/movieSlice";
-import {useSearchParams} from "react-router-dom";
+import {useNavigate, useSearchParams} from "react-router-dom";
 import {MoviesList} from "../MoviesList/MoviesList";
 import {PaginationComponent} from "../../Pagination/PaginationComponent";
 
@@ -14,6 +14,11 @@ const MoviesByGenre = () => {
     useEffect(() => {
         genreId && dispatch(movieActions.getByGenre({with_genres: genreId, page: searchParams.get('page') || '1'}))
     }, [genreId, searchParams]);
+    const navigate = useNavigate();
+    const error = useAppSelector(state => state.genres.genresError);
+    if (error) {
+        navigate('/errorPage',{state:error})
+    }
 
     return (moviesByGenre &&
         <div className={css.movieByGenreBox}>

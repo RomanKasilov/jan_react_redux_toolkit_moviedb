@@ -21,7 +21,6 @@ const MovieInfo = () => {
                 .then(value => setKey(value.results[0].key))
         }
     }, [movieInfo]);
-    console.log(key)
     return (movieInfo &&
         <div className={css.movieInfoBox}>
             <div className={css.moviePoster}>

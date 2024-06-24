@@ -2,8 +2,7 @@ import {useSearchParams} from "react-router-dom";
 import css from './Pagination.module.css'
 import {FC} from "react";
 import {IPaginatedMoviesList} from "../../types/IPaginatedMoviesList";
-import {Button, Divider, Pagination, Stack} from "@mui/material";
-import {useForm} from "react-hook-form";
+import {Button, Stack} from "@mui/material";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
