@@ -24,7 +24,7 @@ const movieService =
                 {params: {page, with_genres, include_adult: false, language: 'en-US'}})
             return response.data
         },
-        getVideo: async (movieId: number): Promise<IVideoResponse> => {
+        getVideos: async (movieId: number): Promise<IVideoResponse> => {
             const response = await apiService.get(urls.movies.getVideo(movieId))
             return response.data
         }

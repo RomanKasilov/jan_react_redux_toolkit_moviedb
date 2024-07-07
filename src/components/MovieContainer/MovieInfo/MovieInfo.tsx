@@ -10,18 +10,23 @@ import {StarsRating} from "../../StarsRating";
 import {GenreBadge} from "../../GenreBadge";
 import {movieService} from "../../../services";
 import css from './MovieInfo.module.css'
+import {IVideo} from "../../../types";
 
 const MovieInfo = () => {
     const {movieInfo} = useAppSelector(state => state.movies);
     const year = movieInfo?.release_date.split('-', 1)
     const navigate = useNavigate();
-    const [key, setKey] = useState<string>('')
+    const [videos, setVideos] = useState<IVideo[] | null>(null)
     useEffect(() => {
         if (movieInfo) {
-            movieService.getVideo(movieInfo.id)
-                .then(value => setKey(value.results[0].key))
+            movieService.getVideos(movieInfo.id)
+                .then(value => setVideos(value.results))
         }
     }, [movieInfo]);
+    let key
+    if (videos) {
+        key = videos[0].key
+    }
     return (movieInfo &&
         <div className={css.movieInfoBox}>
             <div>
